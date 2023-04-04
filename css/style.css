@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans";
+}
+/* ========== */
+.tabs {
+  width: 65%;
+  margin: 6.5rem auto 0;
+}
+.tabs__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+}
+.tabs__item {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #263238;
+  cursor: pointer;
+  position: relative;
+}
+.tabs__item::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #263238;
+  border-radius: 30px;
+  transition: width ease .3s;
+}
+.tabs__item.active::after {
+  width: 100%;
+}
+.tabs__container {
+  position: relative;
+}
+.tabs__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.tabs__content.active {
+  display: block;
+  width: 100%;
+  animation: fade 1s ease;
+}
+.tabs__content img{
+  width: 100%;
+  height: 20rem;
+}
+.tabs__content p{
+  width: 70%;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1rem auto 0rem;
+  color: #222;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 70%;
+  }
+  .tabs {
+    width: 100%;
+  }
+}
